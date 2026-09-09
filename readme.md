@@ -1,5 +1,7 @@
 # Mini Realistic Airways
 
+[中文](https://github.com/ericpzh/MiniRealisticAirways?tab=readme-ov-file#%E8%BF%B7%E4%BD%A0%E7%9C%9F%E5%AE%9E%E7%A9%BA%E7%AE%A1)
+
 This is a mini yet realistic air traffic control mod for Mini Airways.
 
 # v2.0 Code Changes (Compared with the Original Version)
@@ -13,6 +15,139 @@ This is a mini yet realistic air traffic control mod for Mini Airways.
 
 - Right-click Mini Airways in your Steam library, open **Properties → Betas → `mod_feat`** ([branch documentation](https://partner.steamgames.com/doc/store/application/branches?l=schinese)), and update the game. The latest version of the mod is already included in this branch.
 - If you want to switch back to the older Realistic Airways mod, download [MiniRealisticAirways.dll](https://github.com/ericpzh/MiniRealisticAirways/releases/download/Public/MiniRealisticAirways.dll) and place it in `<path_to_game>\Mini Airways\BepInEx\plugins`.
+
+# Tips
+
+Use `Tab` to close text display on altitude, speed, type and fuel level below the aircraft.
+
+<img src="img/detail.png" width=12.75% height=12.75%> 
+
+<img src="img/nodetail.png" width=20% height=20%>
+
+To disable wind, use `Enable Wind` toggle in `Options` menu or add `-disableWind` to launch options. To disable events, use `Enable Event` toggle in `Options` menu or add `-disableEvents` to launch options. To disable TCAS & GPWS, use `Enable TCAS` toggle in `Options` menu or add `-disableTCAS` to launch options.
+
+<img src="img/settings.png" width=50% height=50%>
+
+# Altitude
+
+Aircraft may be in one of the three altitudes, low <img src="img/low.png" width=2% height=2%>, normal <img src="img/mid.png" width=2% height=2%>, and high <img src="img/high.png" width=2% height=2%>. The current altitude of an aircraft is displayed on the left of aircraft icon and is displayed below the aircraft as: `ALT: ^`.
+Aircraft and upgrades interact with altitude in the following ways:
+- Arrival aircraft arrives at high <img src="img/high.png" width=2% height=2%> altitude.
+- Arrival aircraft can only land at low <img src="img/low.png" width=2% height=2%> altitude.
+- Departure aircraft will start at low <img src="img/low.png" width=2% height=2%> altitude after take-off sequence finishes.
+- Departure aircraft will only be able to reach departure (colored) waypoint at normal <img src="img/mid.png" width=2% height=2%> or high <img src="img/high.png" width=2% height=2%> altitude.
+- Landing waypoint will instruct aircraft to reach low <img src="img/low.png" width=2% height=2%> altitude and issue the landing clearance.
+- Terrain (Red) will not affect aircraft in high <img src="img/high.png" width=2% height=2%> altitude. Restricted area (yellow), however, will.
+
+<img src="img/terrain.png" width=20% height=20%>
+
+- When two aircraft are about to crash, TCAS will command one to climb and the other to descend when possible.
+- When aircraft is about to crash into terrain (Red), GPWS will command aircraft to climb.
+- Landing aircraft are not commanded by TCAS or GPWS.
+
+You can control the altitude of the aircraft by:
+- Press `W` while hovering mouse over or commanding an aircraft will increase its altitude, when animation is completed.
+- Press `S` while hovering mouse over or commanding an aircraft will decrease its altitude, when animation is completed.
+- `Scroll Up` while hovering mouse over an aircraft will increase its altitude, when animation is completed.
+- `Scroll Down` while hovering mouse over an aircraft will decrease its altitude, when animation is completed.
+
+Waypoint/take-off waypoint can command aircraft's altitude. You can control the altitude of the waypoint/take-off waypoint by:
+- Press `W` or `Scroll Up` and holding a waypoint will increase its altitude.
+- Press `S` or `Scroll Down` and holding a waypoint will decrease its altitude.
+
+<img src="img/waypoint.png" width=10% height=10%>
+
+# Speed
+
+Aircraft may be in one of the three speeds, slow <img src="img/slow.png" width=2% height=2%>, normal <img src="img/norm.png" width=2% height=2%>, and fast <img src="img/fast.png" width=2% height=2%>. The current speed of an aircraft is displayed on the right of aircraft icon and is displayed below the aircraft as: `SPD: >`.
+Aircraft and upgrades interact with altitude in the following ways:
+- Arrival aircraft arrives at normal <img src="img/norm.png" width=2% height=2%> speed.
+- Arrival aircraft can land when it is in slow <img src="img/slow.png" width=2% height=2%> or normal <img src="img/norm.png" width=2% height=2%> speed.
+- Arrival aircraft going around will lift off at normal <img src="img/norm.png" width=2% height=2%> speed.
+- Departure aircraft will start at normal <img src="img/norm.png" width=2% height=2%> speed after take-off sequence finishes.
+- Landing waypoint will instruct aircraft to first reach normal <img src="img/norm.png" width=2% height=2%> speed if the current speed is fast <img src="img/fast.png" width=2% height=2%> and then issue the landing clearance.
+
+You can control the altitude of the aircraft by:
+- Press `D` while hovering mouse over or commanding an aircraft will increase its speed, when animation is completed.
+- Press `A` while hovering mouse over or commanding an aircraft will decrease its speed, when animation is completed.
+- Hold `left shift` while `Scroll Up` and hovering mouse over an aircraft will increase its speed, when animation is completed.
+- Hold `left shift` while `Scroll Down` and hovering mouse over an aircraft will decrease its speed, when animation is completed.
+
+Waypoint/take-off waypoint can command aircraft's speeds. You can control the altitude of the waypoint/take-off waypoint by:
+- Press `D` or hold `left shift` and `Scroll Up` while holding a waypoint will increase its speed.
+- Press `A` or hold `left shift` and `Scroll Down` while holding a waypoint will decrease its speed.
+
+<img src="img/waypoint.png" width=10% height=10%>
+
+# Aircraft Type
+
+Aircraft will have the following three types: light<img src="img/light.png" width=5% height=5%>, medium<img src="img/nodetail.png" width=6.5% height=6.5%>, and heavy<img src="img/heavy.png" width=6% height=6%>.
+
+<img src="img/apronsize.png" width=20% height=20%>
+
+Each arrival aircraft type carries a different amount of fuel, if fuel runs out and the aircraft is still in the air, the game will end. You can tell their remaining fuel amount by the droplet-shaped fuel gauge located on the top-right of each arrival aircraft. When an aircraft's fuel tank is less than 30%, its fuel gauge will blink.
+
+<img src="img/fuel.png" width=10% height=10%>
+
+Light aircraft have the following behavior:
+- Plane icon size is small.
+- Will only have speed of slow <img src="img/slow.png" width=2% height=2%>, normal <img src="img/norm.png" width=2% height=2%>. If passing through a waypoint with fast <img src="img/fast.png" width=2% height=2%>, it will only go up to normal <img src="img/norm.png" width=2% height=2%>.
+- Light aircraft can only land with slow <img src="img/slow.png" width=2% height=2%>, when instructed to land, will slow down to slow <img src="img/slow.png" width=2% height=2%> automatically.
+- Landing waypoint will insturct light aircraft to reach slow <img src="img/slow.png" width=2% height=2%> and then issue the landing clearance.
+- Light aircraft has 50% faster turning speed.
+- 2.5% of all random aircraft (arrival & departure) spawn.
+- Light aircraft has 3 in-game days worth of fuel.
+
+Heavy aircraft have the following behavior:
+- Plane icon size is large.
+- 30% of all random aircraft (arrival & departure) spawn.
+- Heavy aircraft has 4 in-game days worth of fuel.
+
+Medium aircraft have the following behavior:
+- Medium aircraft has 3.5 in-game days worth of fuel.
+
+# Wind
+
+Wind can affect aircraft's takeoff / landing performance. When aircraft are landing in a tailwind, the go-around chance increases significantly. When aircraft takes off in a tailwind, the reject takeoff chance increases significantly. Wind direction is displayed as the arrow direction on the top-left corner of the screen. Yes, it used to be just a back button! 
+
+<img src="img/windsock.png" width=20% height=20%>
+
+The reject takeoff / go-around probability has the following behavior:
+- When aircraft are landing with a full tailwind, the go-around probability is very high.
+- When aircraft are taking off with a full tailwind, the reject takeoff probability is very high.
+- Reject takeoff / go-around probability drops to 0% when the wind direction is at or below 90 degrees of the runway (full cross-wind).
+- The probabilities are not linear between full tail-wind and full cross-wind.
+- Lighter aircraft are more susceptible to wind conditions.
+
+# Rare Events
+
+Sometimes, accidents do happen. These rare events show up on average every 6 days:
+- Aircraft may arrive with emergency fuel, diverted from a nearby airport, and they need to land immediately.
+
+<img src="img/fuel.png" width=20% height=20%>
+
+- Runway excursion happened leading to a runway closure. The runway will be colored red, and all landing aircraft will automatically go around prior to touching down, and aircraft cannot take off from this runway. Note that if the stopped aircraft partially blocked another runway, it effectively closed the other one as well.
+
+<img src="img/runway.png" width=20% height=20%>
+
+- Weather patterns can also show up in some areas, forcing all aircraft to go to high <img src="img/high.png" width=2% height=2%> to avoid bad weather. If an aircraft enters the weather cell, it would count as a restricted area violation.
+
+<img src="img/weather.png" width=20% height=20%>
+
+- Aircraft had suffered from an engine failure, you need to bring it back to the field immediately.
+
+<img src="img/return.png" width=20% height=20%>
+
+<img src="img/return2.png" width=20% height=20%>
+
+# Other Changes
+- You now starts with 3 waiting area upgrades.
+- You now get upgrades twice as fast.
+- Aircraft flying out-of-bound now count as restricted area violations instead of an instant game-over.
+- You can name your waypoints by first press `Space` when placing it and starting typing. Only letters and numbers are allowed with a maximum length of 5 characters.
+
+<img src="img/waypoint_name.png" width=100% height=100%>
+
 ***
 
 # 迷你真实空管
