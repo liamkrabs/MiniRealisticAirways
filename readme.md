@@ -20,17 +20,17 @@ This is a mini yet realistic air traffic control mod for Mini Airways.
 
 Use `Tab` to close text display on altitude, speed, type and fuel level below the aircraft.
 
-<img src="img/detail.png" width=12.75% height=12.75%> 
+<img src="img/detail.png" width=20% height=20%> 
 
 <img src="img/nodetail.png" width=20% height=20%>
 
-To disable wind, use `Enable Wind` toggle in `Options` menu or add `-disableWind` to launch options. To disable events, use `Enable Event` toggle in `Options` menu or add `-disableEvents` to launch options. To disable TCAS & GPWS, use `Enable TCAS` toggle in `Options` menu or add `-disableTCAS` to launch options.
+To disable wind, use `Enable Wind` toggle in `Options` menu or add `-disableWind` to launch options. To disable events, use `Enable Event` toggle in `Options` menu or add `-disableEvents` to launch options. To disable TCAS & GPWS, use `Enable TCAS&GPWS` toggle in `Options` menu or add `-disableTCAS` to launch options.
 
 <img src="img/settings.png" width=50% height=50%>
 
 # Altitude
 
-Aircraft may be in one of the three altitudes, low <img src="img/low.png" width=2% height=2%>, normal <img src="img/mid.png" width=2% height=2%>, and high <img src="img/high.png" width=2% height=2%>. The current altitude of an aircraft is displayed on the left of aircraft icon and is displayed below the aircraft as: `ALT: ^`.
+Aircraft may be in one of the three altitudes, low <img src="img/low.png" width=2% height=2%>, normal <img src="img/mid.png" width=2% height=2%>, and high <img src="img/high.png" width=2% height=2%>. The current altitude of an aircraft is displayed on the left of aircraft icon and is displayed below the aircraft as: `ALT: ■`.
 Aircraft and upgrades interact with altitude in the following ways:
 - Arrival aircraft arrives at high <img src="img/high.png" width=2% height=2%> altitude.
 - Arrival aircraft can only land at low <img src="img/low.png" width=2% height=2%> altitude.
@@ -59,7 +59,7 @@ Waypoint/take-off waypoint can command aircraft's altitude. You can control the 
 
 # Speed
 
-Aircraft may be in one of the three speeds, slow <img src="img/slow.png" width=2% height=2%>, normal <img src="img/norm.png" width=2% height=2%>, and fast <img src="img/fast.png" width=2% height=2%>. The current speed of an aircraft is displayed on the right of aircraft icon and is displayed below the aircraft as: `SPD: >`.
+Aircraft may be in one of the three speeds, slow <img src="img/slow.png" width=2% height=2%>, normal <img src="img/norm.png" width=2% height=2%>, and fast <img src="img/fast.png" width=2% height=2%>. The current speed of an aircraft is displayed on the right of aircraft icon and is displayed below the aircraft as: `SPD: ■`.
 Aircraft and upgrades interact with altitude in the following ways:
 - Arrival aircraft arrives at normal <img src="img/norm.png" width=2% height=2%> speed.
 - Arrival aircraft can land when it is in slow <img src="img/slow.png" width=2% height=2%> or normal <img src="img/norm.png" width=2% height=2%> speed.
@@ -170,7 +170,7 @@ Sometimes, accidents do happen. These rare events show up on average every 6 day
 
 使用`Tab`可以关闭高度、速度、机型和燃料的具体数值。
 
-<img src="img/detail_cn.png" width=12.75% height=12.75%> 
+<img src="img/detail_cn.png" width=20% height=20%> 
 
 <img src="img/nodetail.png" width=20% height=20%>
 
